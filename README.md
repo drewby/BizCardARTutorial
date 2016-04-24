@@ -14,6 +14,8 @@ Here are the basic elements of the demo:
 
 <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fdrewrobbins%2Fvideos%2F10154180704073689%2F&show_text=1&width=560" width="560" height="458" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 
+[View a video of the demo on Facebook](https://www.facebook.com/drewrobbins/videos/10154180704073689/)
+
 ## Prequisites
 
 The first thing is to make sure you have all the tools and assets you will need to begin the project. You will need to register to use both Unity and Vuforia. I did not include those steps below.

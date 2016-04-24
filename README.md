@@ -22,7 +22,9 @@ The first thing is to make sure you have all the tools and assets you will need 
 
 1. Scan your business card or any flat paper or photo that has a high contrast pattern on it. When we use this later, you will get a rating of how "augmentable" is the image. In other words, how easy it is to detect the image in the camera field of view. Note that the resulting image file needs to be less than 2mb.
 
-1. On the [Vuforia Developer Portal](https://developer.vuforia.com), click the *Develop* tab and make sure you are in the *License Manager*. Click *Add License Key*, enter an *Application Name* and select *Mobile* for Device and *Starter - No Charge* for License Key. Click Next and confirm the Developer Agreement. [![Add License Key screenshot](images/thumb/VuforiaLicense1-small.jpg)](images/VuforiaLicense1-large.png)
+1. On the [Vuforia Developer Portal](https://developer.vuforia.com), click the *Develop* tab and make sure you are in the *License Manager*. Click *Add License Key*, enter an *Application Name* and select *Mobile* for Device and *Starter - No Charge* for License Key. Click Next and confirm the Developer Agreement. 
+
+    [![Add License Key screenshot](images/thumb/VuforiaLicense1-small.jpg)](images/VuforiaLicense1-large.png)
 
 1. Click the newly created License Key. Copy the key to a local text file and save for later.
 
@@ -30,9 +32,13 @@ The first thing is to make sure you have all the tools and assets you will need 
 
 1. Click the name of your new Database to open it in Target Manager.
 
-1. For each of your scanned images, click *Add Target*. Select *Single Image*. Choose the image file you scanned earlier. Choose a *Width* for how large the image will be in your Unity scene. I used a width of 5 for my business card images. Change the Name if you like, or keep the default. Click *Add*. [![Add Add Target screenshot](images/thumb/VuforiaAddTarget-small.jpg)](images/VuforiaAddTarget-large.png)
+1. For each of your scanned images, click *Add Target*. Select *Single Image*. Choose the image file you scanned earlier. Choose a *Width* for how large the image will be in your Unity scene. I used a width of 5 for my business card images. Change the Name if you like, or keep the default. Click *Add*.
 
-1. Note that there is a rating given to each of your targets. This 1-5 star rating will tell you how well Vuforia will be able to detect the image in the scene. Try to find an image that have a 5 star rating so you are not wasting too much time with failed detections. [![Target Example screenshot](images/thumb/VuforiaTargetExample-small.jpg)](images/VuforiaTargetExample-large.png)
+    [![Add Add Target screenshot](images/thumb/VuforiaAddTarget-small.jpg)](images/VuforiaAddTarget-large.png)
+
+1. Note that there is a rating given to each of your targets. This 1-5 star rating will tell you how well Vuforia will be able to detect the image in the scene. Try to find an image that have a 5 star rating so you are not wasting too much time with failed detections. 
+
+    [![Target Example screenshot](images/thumb/VuforiaTargetExample-small.jpg)](images/VuforiaTargetExample-large.png)
 
 1. Once you have added all of your targets, you can click *Download Database (All)*. Select *Unity Editor* and click *Download*. Save the resulting .unitypackage file to a local folder.
 
@@ -42,9 +48,13 @@ You now have all the assets that you need to get started with your augmented rea
 
 Our next step is to create our Unity project and the initial scene that will define our augmented reality experience.
 
-1. Launch Unity and create a new 3D project. Provide the *Project name* and choose a *Location* for your poject click *Create project*. You will have the default scene show in the Unity editor with a Main Camera and Directional Light. [![Create New Unity Project screenshot](images/thumb/UnityNewProject-small.jpg)](images/UnityNewProject-large.png)
+1. Launch Unity and create a new 3D project. Provide the *Project name* and choose a *Location* for your poject click *Create project*. You will have the default scene show in the Unity editor with a Main Camera and Directional Light.
 
-1. Import the Vuforia unity package. Click the *Assets* menu and select *Import Package > Custom Package...* Locate the first .unitypackage file you downloaded from the Vuforia developer portal, which contains the Vuforia platform. Choose to import *All* (the default) and click *Import*. [![Import Asset Package screenshot](images/thumb/ImportPackage-small.jpg)](images/ImportPackage-large.png)
+    [![Create New Unity Project screenshot](images/thumb/UnityNewProject-small.jpg)](images/UnityNewProject-large.png)
+
+1. Import the Vuforia unity package. Click the *Assets* menu and select *Import Package > Custom Package...* Locate the first .unitypackage file you downloaded from the Vuforia developer portal, which contains the Vuforia platform. Choose to import *All* (the default) and click *Import*.
+
+    [![Import Asset Package screenshot](images/thumb/ImportPackage-small.jpg)](images/ImportPackage-large.png)
 
 1. Import the Target database. Repeat the previous step, but this time import the .unitypackage file you downloaded from Target Manager on the Vuforia developer portal.
 
@@ -66,7 +76,7 @@ Now we will use the Vuforia prefab objects to create a 3D scene that defines our
 
 * Finally, to the far right of the Unity tool, you should see the *Inspector* window. Sometimes the *Services* window is showing, so just click the tab at the top that says *Inspector* to show the correct window. This window is used to inspect and manipulate all of the various settings of your objects in your scene or in the project.
 
-[![Unity Default Scene workspace screenshot](images/thumb/UnityDefaultScene-small.jpg)](images/UnityDefaultScene-large.png)
+    [![Unity Default Scene workspace screenshot](images/thumb/UnityDefaultScene-small.jpg)](images/UnityDefaultScene-large.png)
 
 You now have very brief understanding of the Unity tool. If you want to learn more, try this [Interface Overview video](http://unity3d.com/learn/tutorials/modules/beginner/editor/interface-overview?playlist=17090 "Interface Overview tutorial"). Let's now make several modifications to our scene.
 
@@ -74,17 +84,23 @@ You now have very brief understanding of the Unity tool. If you want to learn mo
 
 1. The first step is to delete the *Main Camera* in the scene. Locate the *Main Camera* in the *Hierarchy* window. Right-click *Main Camera* and click *Delete*.
 
-1. Now we will add the AR Camera from Vuforia. In the *Project* window, expand the *Vuforia* folder and then expand the *Prefabs* folder. Prefabs in Unity are preconfigured objects with some characteristics and functionality already defined. In this case, the *AR Camera* is a modified camera with the Vuforia AR functionality built in. [![AR Camera screenshot](images/thumb/ARCamera-small.jpg)](images/ARCamera-large.png)
+1. Now we will add the AR Camera from Vuforia. In the *Project* window, expand the *Vuforia* folder and then expand the *Prefabs* folder. Prefabs in Unity are preconfigured objects with some characteristics and functionality already defined. In this case, the *AR Camera* is a modified camera with the Vuforia AR functionality built in.
+
+    [![AR Camera screenshot](images/thumb/ARCamera-small.jpg)](images/ARCamera-large.png)
 
 1. Drag the *AR Camera* up to the *Hierarchy* window and drop it anywhere in the window. This will create an *AR Camera* in the hierarchy and you should see it appear in the scene.
 
-1. Select the newly created *AR Camera*. The *Inspector* window will show the settings for several components of the *AR Camera*. Find *Vuforia Behaviour* and click on *App License Key*. You will need to copy and paste your license key from the Vuforia developer portal to this setting. [![Vuforia App License Key screenshot](images/thumb/AppLicenseKey-small.jpg)](images/AppLicenseKey-large.png)
+1. Select the newly created *AR Camera*. The *Inspector* window will show the settings for several components of the *AR Camera*. Find *Vuforia Behaviour* and click on *App License Key*. You will need to copy and paste your license key from the Vuforia developer portal to this setting.
+
+    [![Vuforia App License Key screenshot](images/thumb/AppLicenseKey-small.jpg)](images/AppLicenseKey-large.png)
 
 ### Create image targets
 
 You now have an AR camera in your scene. The next step is to create Image Targets. These will be objects in your scene used to represent the detected images you scanned and put in your target database. These targets will not show in the live view of your scene. Rather the will provide a center for the other objects to orient around once your target is detected.
 
-1. In the *Project* window, locate the Vuforia prefab called *ImageTarget*. [![ImageTarget screenshot](images/thumb/ImageTarget-small.jpg)](images/ImageTarget-large.png)
+1. In the *Project* window, locate the Vuforia prefab called *ImageTarget*.
+
+    [![ImageTarget screenshot](images/thumb/ImageTarget-small.jpg)](images/ImageTarget-large.png)
 
 1. Drag *ImageTarget* to the *Heirarchy* window and drop it into scene.
 
@@ -92,7 +108,9 @@ You now have an AR camera in your scene. The next step is to create Image Target
 
 1. Raname this *ImageTarget* so you can identify it later. For example, I renamed mine to BizCardEnglish.
 
-1. Find the *Image Target Behaviour* component and change *Database* to your imported target database. Select the correct *Image Target* for this object. In my project, it is the English side of my Business Card. [![ImageTarget inspector screenshot](images/thumb/ImageTargetInspector-small.jpg)](images/ImageTargetInspector-large.png)
+1. Find the *Image Target Behaviour* component and change *Database* to your imported target database. Select the correct *Image Target* for this object. In my project, it is the English side of my Business Card.
+
+    [![ImageTarget inspector screenshot](images/thumb/ImageTargetInspector-small.jpg)](images/ImageTargetInspector-large.png)
 
 1. Drag another *ImageTarget* from the *Project* window to the *Heirarchy* window. Rename this *ImageTarget* (BizCardJapanese) and repeat the step to select *Database* and *Image Target* in the *Inspector* window.
 
@@ -110,7 +128,9 @@ Next, lets add some augmented experience to these cards.
 
 The first experience we will create will be a simple one, using basic 3D models.
 
-1. In the *Heirarchy* window, right-click your first Image Target (BizCardEnglish), select *3D Object -> Cube*. This will create a Cube in the scene, but we need to adjust it's size and position. [![First Scene done screenshot](images/thumb/CreateCube-small.jpg)](images/CreateCube-large.png)
+1. In the *Heirarchy* window, right-click your first Image Target (BizCardEnglish), select *3D Object -> Cube*. This will create a Cube in the scene, but we need to adjust it's size and position.
+
+    [![First Scene done screenshot](images/thumb/CreateCube-small.jpg)](images/CreateCube-large.png)
 
 1. Select the new Cube object so that it's settings are shown in the *Inspector* window.
 
@@ -130,9 +150,13 @@ Before we click the Play button and preview this experience, there are a few mor
 
 1. In the *Heirarchy* window, select AR Camera so its settings show in the *Inspector* window.
 
-1. In the *Inspector* window. locate the component *Web Cam Behaviour*. Choose the appropriate *Camera Device*. For example, you may have a front camera and rear camera. [![Choose Device Camera screenshot](images/thumb/ARCameraSettings1-small.jpg)](images/ARCameraSettings1-large.png)
+1. In the *Inspector* window. locate the component *Web Cam Behaviour*. Choose the appropriate *Camera Device*. For example, you may have a front camera and rear camera.
 
-1. Now find the *Database Load Behaviour* component. Check the box next to Load Named Database (where Named is replaced with your Vuforia Database). Also check the box *Activate* which appears after selecting your database. [![Database Load Behaviour screenshot](images/thumb/ARCameraSettings2-small.jpg)](images/ARCameraSettings2-large.png)
+    [![Choose Device Camera screenshot](images/thumb/ARCameraSettings1-small.jpg)](images/ARCameraSettings1-large.png)
+
+1. Now find the *Database Load Behaviour* component. Check the box next to Load Named Database (where Named is replaced with your Vuforia Database). Also check the box *Activate* which appears after selecting your database.
+
+    [![Database Load Behaviour screenshot](images/thumb/ARCameraSettings2-small.jpg)](images/ARCameraSettings2-large.png)
 
 1. Finally, if you want more than one Image to be detected at a time, then adjust the *Max Simultaneous Tracked Images" setting to 2 or more in the *Vuforia Behaviour* component.
 
@@ -148,7 +172,7 @@ Now you are ready to try this AR experience.
 
 1. Press the Play button again to stop the preview.
 
-[![Simple 3D Object AR screenshot](images/thumb/Simple3DObjectAR-small.jpg)](images/Simple3DObjectAR-large.png)
+    [![Simple 3D Object AR screenshot](images/thumb/Simple3DObjectAR-small.jpg)](images/Simple3DObjectAR-large.png)
 
 Assuming everything worked, that was pretty cool! Right? But it will be even better if we place some 3D animated objects in the scene.
 
@@ -162,7 +186,9 @@ Now we need to get a 3D animated object. Unity has an Asset Store for artists an
 
 1. In the search results, you can select "Free Only" to locate only free packages.
 
-1. Look for the *"Action Pack"* Animation package from 3D-Brothers. Click the package to open and preview. [![Simple 3D Object AR screenshot](images/thumb/AssetStore-small.jpg)](images/AssetStore-large.png)
+1. Look for the *"Action Pack"* Animation package from 3D-Brothers. Click the package to open and preview.
+
+    [![Simple 3D Object AR screenshot](images/thumb/AssetStore-small.jpg)](images/AssetStore-large.png)
 
 1. Click the *Import* button to bring this package into your Unity project. This import process took several minutes on my machine. Be patient. :)
 
@@ -174,7 +200,9 @@ Now we need to get a 3D animated object. Unity has an Asset Store for artists an
 
 1. Drag *action_pack* onto one of your image targets in the *Heirarchy* window. Drop it on the image target so that it becomes a child of the image target object.
 
-1. Select the new action_pack object in the *Heirarchy* window and adjust its Scale something relative to your image target. I adjusted *X*, *Y*, and *Z* to 0.5 in my scene. [![Action Pack 3D Object AR screenshot](images/thumb/ActionPackObject-small.jpg)](images/ActionPackObject-large.png)
+1. Select the new action_pack object in the *Heirarchy* window and adjust its Scale something relative to your image target. I adjusted *X*, *Y*, and *Z* to 0.5 in my scene.
+
+    [![Action Pack 3D Object AR screenshot](images/thumb/ActionPackObject-small.jpg)](images/ActionPackObject-large.png)
 
 1. Press Play and preview your poject.
 
@@ -204,7 +232,9 @@ You now have a 3D animated object in the scene. However, once the animation comp
 
 1. Right-click *angry beheivor* and select *Make Transition*. Move your mouse over to *punching bag* and click to create the transition.
 
-1. Now Right-click *punching bag* and select *Make Transition*. Move your mouse over to *angry beheivor* and click to create the transition. [![Unity Animator screenshot](images/thumb/Animator-small.jpg)](images/Animator-large.png)
+1. Now Right-click *punching bag* and select *Make Transition*. Move your mouse over to *angry beheivor* and click to create the transition.
+
+    [![Unity Animator screenshot](images/thumb/Animator-small.jpg)](images/Animator-large.png)
 
 1. Save the current scene by clicking *File -> Save Scene* or typing Ctrl-S.
 

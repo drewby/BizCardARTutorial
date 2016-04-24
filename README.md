@@ -12,6 +12,8 @@ Here are the basic elements of the demo:
 
 * To make things fun, I used animated 3D models available in the Unity Asset store. I found the models from [3D Brothers](http://www.3d-brothers.com/ "3D Brothers website") to be really great for this demo. Thanks to them for making some of their work free in the Unity Asset, for a hobbyist like me.
 
+<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fdrewrobbins%2Fvideos%2F10154180704073689%2F&show_text=1&width=560" width="560" height="458" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+
 ## Prequisites
 
 The first thing is to make sure you have all the tools and assets you will need to begin the project. You will need to register to use both Unity and Vuforia. I did not include those steps below.
